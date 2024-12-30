@@ -17,6 +17,17 @@ Deep learning models are often vulnerable to adversarial attacks or spurious cor
 - Applying DRO on a **Colored MNIST dataset**, where colors are spuriously correlated with digit labels.
 - Offering tools to compare **DRO**, **FGSM adversarial training**, and **standard training**.
 
+### **Note on the DRO Implementation**
+The DRO algorithm implemented in this project differs from the algorithm presented in the paper by Sinha et al. The original algorithm would often fail to "move away" from the starting example when attempting to create an adversarial example using the modified loss function. 
+
+To address this:
+- The starting point for the Stochastic Gradient Descent (SGD) that maximizes the modified loss is sampled from a Gaussian distribution with:
+  - A **mean** equal to the original image.
+  - A **variance** controlled by the parameter `adversarial_variance`.
+- The optimization runs until:
+  - The difference in the modified loss is smaller than the parameter `epsilon`, or
+  - A maximum number of steps (`max_steps`) is reached.
+
 ---
 
 ## **2. Core Features**
