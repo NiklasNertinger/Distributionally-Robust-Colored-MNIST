@@ -129,7 +129,8 @@ def prepare_results_dataframe(learning_rate_network, loss_fn_network, batch_size
 def run_standard_experiments(param_grid):
     """
     Run experiments with different parameter combinations. For each combination the training and 
-    evaluation process is executed and a folder is created to save the results. Training will run three
+    evaluation process is executed and a folder is created to save a visualization of the color palette,
+    a loss plot, the final model, and an excel file containing information about the training run and parameters. Training will run three
     times for each parameter combination to account for randomness in the initialization.
     parameters needed (each one as a list of all possible values):
     - learning_rate_network (float): Learning rate for the network optimizer.
