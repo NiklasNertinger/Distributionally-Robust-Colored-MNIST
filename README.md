@@ -79,19 +79,46 @@ Deep learning models are often vulnerable to adversarial attacks or spurious cor
 ### **Adversarial Example: DRO**
 This image visualizes an adversarial example generated using the **Distributionally Robust Optimization (DRO)** training algorithm. Similar to FGSM, it displays the original image, the adversarially perturbed image, and the difference between the two.
 
-![DRO Adversarial Example](adversarial example.png)
+#### Parameters:
+- `gamma = 0.3`
+- `learning_rate_adversarial = 0.1`
+- `epsilon = 0.0001`
+- `loss_fn_adversarial = nll_loss`
+- `adversarial_variance = 0.2`
+- `max_steps = 100`
+
+![DRO Adversarial Example](images/adversarial_example_dro.png)
 
 ---
 
 ### **Adversarial Example: FGSM**
 The following image demonstrates the effect of the **Fast Gradient Sign Method (FGSM)** on the Colored MNIST dataset. The original image, the adversarially perturbed image, and the difference between the two are shown side-by-side.
 
-![FGSM Adversarial Example](adversarial example fgsm.png)
+#### Parameters:
+- `epsilon = 0.2`
+
+![FGSM Adversarial Example](images/adversarial_example_fgsm.png)
 
 ---
 
 ### **Colored MNIST Dataset Visualization**
-Below is a visualization of the training and testing datasets. Colors are spuriously correlated with digit labels to introduce a challenging dataset for robustness evaluation.
+Below is a visualization of a possible training and testing dataset. Colors are spuriously correlated with digit labels to introduce a challenging dataset for robustness evaluation. Users can specify custom **color palettes** for both the training and test datasets, allowing flexibility in how spurious correlations are introduced.
 
-![Dataset Visualization](color pallete.png)
+#### Default Color Palettes:
+- **Color Palettes**:
+  ```python
+  train_color_palette = [
+      [0.0, 0.0, 1.0], [1.0, 0.0, 0.0], [0.5, 1.0, 0.5], 
+      [0.5, 0.0, 0.5], [1.0, 0.5, 0.0], [1.0, 1.0, 0.0], 
+      [0.6, 0.4, 0.2], [1.0, 0.6, 0.6], [0.0, 1.0, 1.0], 
+      [1.0, 0.0, 1.0]
+  ]
+  test_color_palette = [
+      [0.5, 0.0, 0.5], [1.0, 0.5, 0.0], [0.0, 0.8, 0.0], 
+      [1.0, 0.0, 1.0], [1.0, 1.0, 0.0], [0.5, 1.0, 0.5], 
+      [1.0, 1.0, 0.0], [1.0, 0.7, 0.8], [0.0, 0.0, 1.0], 
+      [1.0, 0.0, 0.0]
+  ]
+
+![Dataset Visualization](images/color_palette.png)
 
