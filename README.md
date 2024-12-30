@@ -115,8 +115,8 @@ The following image demonstrates the effect of the **Fast Gradient Sign Method (
 ### **Colored MNIST Dataset Visualization**
 Below is a visualization of a possible training and testing dataset. Colors are spuriously correlated with digit labels to introduce a challenging dataset for robustness evaluation. Users can specify custom **color palettes** for both the training and test datasets, allowing flexibility in how spurious correlations are introduced.
 
-#### Default Color Palettes:
-- **Color Palettes**:
+#### Parameters:
+- **Train Color Palette**:
   ```python
   train_color_palette = [
       [0.0, 0.0, 1.0], [1.0, 0.0, 0.0], [0.5, 1.0, 0.5], 
@@ -124,6 +124,8 @@ Below is a visualization of a possible training and testing dataset. Colors are 
       [0.6, 0.4, 0.2], [1.0, 0.6, 0.6], [0.0, 1.0, 1.0], 
       [1.0, 0.0, 1.0]
   ]
+- **Test Color Palette**:
+   ```python
   test_color_palette = [
       [0.5, 0.0, 0.5], [1.0, 0.5, 0.0], [0.0, 0.8, 0.0], 
       [1.0, 0.0, 1.0], [1.0, 1.0, 0.0], [0.5, 1.0, 0.5], 
