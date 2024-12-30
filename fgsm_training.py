@@ -199,7 +199,9 @@ def save_adversarial_example_image(model, epsilon, exp_dir, train_loader, device
 def run_fgsm_experiments(param_grid):
     """
     Run experiments with different parameter combinations. For each combination the training and 
-    evaluation process is executed and a folder is created to save the results. Training will run three
+    evaluation process is executed and a folder is created to save a visualization of an adversarial example,
+    a visualization of the color palette, a loss plot, the final model, and an excel file containing information
+    about the training run and parameters. Training will run three
     times for each parameter combination to account for randomness in the initialization.
     parameters needed (each one as a list of all possible values):
     - epsilon (float): Perturbation magnitude for FGSM attack.
