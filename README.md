@@ -46,7 +46,7 @@ To address this:
 - **Purpose**: Runs the **Distributionally Robust Optimization (DRO)** training algorithm on the Colored MNIST dataset.
 - **Details**:
   - Executes the training process **three times for each parameter combination** to account for randomness in the model initialization.
-  - For each parameter combination, a dedicated folder is created where all important data (e.g., model checkpoints, logs, and results) related to the training is saved.
+  - Saves all outputs described in the [What is Saved](#what-is-saved) section.
 - **Output**: Trained models using DRO, saved data for each training run, and performance metrics for analysis.
 
 ### 2. `visualize_adversarial_example`
@@ -66,7 +66,7 @@ To address this:
 - **Purpose**: Runs the **Fast Gradient Sign Method (FGSM)** adversarial training algorithm on the Colored MNIST dataset.
 - **Details**:
   - Executes FGSM training **three times for each parameter combination** to account for randomness in initialization.
-  - Creates a folder for each parameter combination to store important data, including model checkpoints and training logs.
+  - Saves all outputs described in the [What is Saved](#what-is-saved) section, including adversarial example visualizations.
 - **Output**: Trained models using FGSM, saved data for each training run, and performance metrics for analysis.
 
 ### 5. `visualize_fgsm_adversarial_example`
@@ -80,8 +80,23 @@ To address this:
 - **Purpose**: Runs the **standard training** algorithm (without adversarial defense) on the Colored MNIST dataset.
 - **Details**:
   - Executes standard training **three times for each parameter combination** to account for randomness in initialization.
-  - Creates a folder for each parameter combination to store important data, including model checkpoints and training logs.
+  - Saves all outputs described in the [What is Saved](#what-is-saved) section, except for adversarial example visualizations.
 - **Output**: Trained models without adversarial defenses, saved data for each training run, and performance metrics for analysis.
+
+---
+
+### **What is Saved**
+
+For each training run (DRO, FGSM, and standard training), the following files and artifacts are saved for every parameter combination and each of the three runs:
+
+- **Color Palette Visualization**: Images showcasing the color palette used for training and testing.
+- **Loss Plot**: A graph of the training and test loss over training epochs.
+- **Final Model**: The trained model saved as a file.
+- **Details Spreadsheet**: An Excel file summarizing parameters and metrics of the training run.
+
+#### Additional Saved Outputs
+- For **DRO and FGSM**: Adversarial example visualizations (images showing original, adversarial, and difference examples).
+- For **Standard Training**: No adversarial example visualizations are saved.
 
 ---
 
