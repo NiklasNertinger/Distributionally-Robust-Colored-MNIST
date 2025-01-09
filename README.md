@@ -24,8 +24,8 @@ To address this:
 - The starting point for the Stochastic Gradient Descent (SGD) that maximizes the modified loss is sampled from a Gaussian distribution with:
   - A **mean** equal to the original image.
   - A **variance** controlled by the parameter `adversarial_variance`.
-- The optimization runs until:
-  - The difference in the modified loss is smaller than the parameter `epsilon`, or
+- The optimization of the modified loss runs until:
+  - The difference between steps in the modified loss is smaller than the parameter `epsilon`, or
   - A maximum number of steps (`max_steps`) is reached.
 
 ---
