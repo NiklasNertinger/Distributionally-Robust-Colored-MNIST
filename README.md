@@ -1,6 +1,6 @@
 # **Distributionally Robust Colored MNIST**
 
-This repository implements a **Distributionally Robust Optimization (DRO)** algorithm to enhance adversarial robustness, applying it to a custom **Colored MNIST dataset**. The project also evaluates its performance against the **Fast Gradient Sign Method (FGSM)** and **standard training (no adversarial defense).**
+This repository implements a **Distributionally Robust Optimization (DRO)** algorithm to enhance adversarial robustness, applying it to a custom **Colored MNIST dataset**. The code is designed for evaluation of its performance against the **Fast Gradient Sign Method (FGSM)** and **standard training (no adversarial defense).**
 
 ## **Table of Contents**
 1. [Project Overview](#1-project-overview)
